@@ -1,0 +1,14 @@
+# Lectura 2-1: "*Collaborative Filtering for Implicit Feedback Datasets*"
+
+En este árticulo, lo autores proponen un método basado contenido implícito, comentan sobre las ventajas que puede tener utilizar este tipo de contenido. Habla sobre las características que se deben tener en consideración al momento de considerar un "feedback implícito". Proponen tratarlos datos en base a lo que ellos llaman "nivel de confianza". Muestran un modelo de factor latente especialemente diseñado para este tipo de datos, donde se hacen ciertas modificaciones que terminan señalando resultados favorables al ser comparado con otros métodos conocidos.
+
+El primer punto que me parece interesante abordar, es el hecho de proponer que el *feedback* se base en contenido implícito, ya que con contenido explícito (rating o algún otro tipo de valoración) no siempre se tiene toda la información.
+
+Me parece pertinente el uso de la variable Cui, ya que ayuda a solucionar el problema de *confidence*, ya que el hecho de que un usuario adquiera un producto no necesariamente indica que sea de sus gusto, ya que puede ser un regalo, o por el contrario, el caso de que un usuario no adquiera un producto, se puede deber a que no conoce sus existencia, o que es muy caro. Sin embargo, me quedó la duda de la elección de *alpha*, se seleccionó 40, pero no explican el porqué de esa elección, si fue aleatoria, o en base a prueba y error, y si ese valor de *alpha* solo sirve para este modelo, o si se puede estandarizar a otros (Me imagino que para cada modelo debe funcionar mejor un *alpha* diferente, pero creo que valia la pena mencionarlo).
+
+Una característica que me pareció muy interesante, es que, no solo recomienda items al usuario, sino que además explica el porqué de esas recomendaciones, cosa que hasta el momento (en lo poco que llevo aprendiendo sobre sistemas recomendadores) no había visto.
+
+Algo que creo que se podría mejorar en este modelo, es que los autores decidieron tratar con el mismo nivel de confianza todos los pares usuario-item que estaban asociados a una preferencia cero, es decir, no consideraba las diferentes situaciones del porque el usuario no presentaba preferencia alguna a ese item, si era por que no le gustaba, porque no sabía de el, porque no contaba con ese canal, etc, aumentaría la complejidad del modelo, pero quizás daría un resultado más óptimo, y claro también se produce el hecho de que al agregar una componente nueva al modelo, podría afectar su escalabilidad.
+
+Lo otro es que en este modelo se habla solo de "preferencia" es decir, de cuanto le gusta a un usuario ese item, no se considera si no le gusta, esto hace que uno pueda pensar las observaciones estan sesgadas. Sin embargo, lo autores supieron abordar muy bien este problema, abordando de manera interesante la estructura del modelo.
+
