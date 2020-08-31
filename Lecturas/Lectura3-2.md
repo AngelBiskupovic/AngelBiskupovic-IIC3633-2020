@@ -1,0 +1,27 @@
+# Lectura 3-2: “Evaluating Recommendation Systems”
+
+El artículo se basa en la evaluación de los sistemas de recomendación, esta evaluación va dirigida por propiedades que pueden tener los diferentes sistemas recomendadores. Se enfocan en dar una descripción general de cada una de estas propiedades, y en cada una de estas analizan los diferentes experimentos que se pueden realizar, y explican como se puede realizar una evaluación en cada caso, mostrando las diferentes dificultades que pueden aparecer. En cuantoa mediciones, los autores se enfocan principalmente en mediciones de precisión y clasificación que han sido vastamente investigadas.
+
+En el capítulo 2 cuando hablan de evaluación fuera de linea, mencionan la importancia de la selección de datos, me pareció adecuado tocar este punto, ya que en muchos experimentos se pueden seleccionar datos que no representen fielmente la realidad, esto puede terminar en un sesgo de la información y cuando se implemente el método seleccionado, podría no recomendar correctamente.
+En cuanto a la evaluación en línea, es interesante mencionar el punto de vista de los autores, que dicen que para evitar efectos negativos en esta, se necesita de un estudio extenso fuera de linea. Es decir, siempre será necesaria una evaluación fuera de línea.
+
+Siguiendo con el capitulo 2, en cuanto al termino "*confidence*" no profundizan demasiado sobre el valor de p, hablan de un valor generalmente usado, pero no mencionan como se llega a este valor sugerido, además, creo que este valor, debe ser seleccionado de acuerdo al tipo de experimento y datos a evaluar, algo a lo que los autores no hacen alusión.
+
+"*Paired results*", presenta una desventaja, y es que se necesita que los valores de los sistemas sean comparables (Esto para poder realizar la diferencia), y además depende de que las diferencias tengan una distribución normal, lo que quiere decir, que para ciertos casos, este no podría ser utilizado como método de comparación.
+
+El cápitulo 3 presenta varias ideas interesantes, una de estas es que explican que las métricas de error MAE y RMSE presentan ciertas diferencias, y que los resultados de tu recomendación pueden variar según cual de estas métricas sea utilizada.
+
+En la evaluación online de ranking, no estoy de acuerdo con los supuestos que se realizan. El primero es que asume que el usuario ha observado todos los items recomendado, y el segundo es, que los items que no selecciona, no son de su interés. Creo que el usuario no necesariamente observará cada uno de los items seleccionados, y por esto, es que si no selecciona alguno de estos, no significa que no le interese, por otro lado, si el usuario selecciona un item, no quiere decir que sea de su interés, ya que lo pudo haber seleccionado por diferentes razones, por ejemplo, para otra persona.
+
+La medición de confianza puede ser un buen método de evaluación. No obstante, presenta ciertos problemas, siendo uno de estos que los algoritmos deben coincidir con el método de confianza, esto debido a que existen métodos de confianza más débiles y, una estimación más precisa con una métrica confianza más débil no implica un mejor resultado.
+
+Existieron puntos que me parecieron un poco más débiles, por ejemplo, cuando se habla de "*cold start*" no se habló de manera tan profunda sobre soluciones, además, creo que pudo haber sido incluido los términos "novedad" y "casualidad" de mejor manera, ya que no se habla de ellos en detalle, solo se hace mención. Otros puntos sin mayor detalle en soluciones fueron, "*trust*", "*novelty*", si bien se propone una idea, no se profundiza mayormente. Me imagino que es debido a que en no se habían estudiado extensamente esos términos.
+
+Un punto interesante fue hablar del concepto de "robustez", por ejemplo para evitar el problema de "*fake users*", si bien los autores mencionan que es poco realista tener un sistema inmune a todo tipo de "*attacks*", es increible que se esté hablando de tocar este tipo de puntos. Sin embargo, creo que es uno de los tipos más difíciles de evaluar, es decir, ¿Como saber si realmentese agrega un usuario falso? ¿Se debe hacer una evaluación online? o ¿ Una evaluación fuera de línea me asegura considerar cada posible ataque?. En ese sentido creo que estoy de acuerdo con los autores, al decir que es poco realista tener un sistema inmune a ataques.
+
+El término adaptibilidad fue abordado de manera sugerente, sobre todo porque incluye la posibilidad de que un ítem, que en el pasado no haa sido considerado interesante, hoy lo sea para un usuario, esto debido a diferentes razones que pudieron haber ocurrido.
+
+Cuando los autores hablan de escalabilidad, lo hablan desde un punto de vista de rendimiento del sistema (computacionalmente hablando), creo que este término es un poco más amplio que eso. Por ejemplo, hablar de este término desde un punto de vista de aumento o disminución de items y/o usuarios, es decir, como este aumento o disminución afecta mi sistema. Si bien se habla de adaptabilidad, novedad y otros términos, creo que se tendrían que haber complementado todos y haberlo al menos mencionado en este punto.
+
+Como conclusión, este árticulo es realmente extenso y aborda de manera profunda gran parte de los puntos. No obstante, creo que su punto débil, fue haberse enfocado principalmente en métodos investigados extensamente, y si bien abordó términos que para esa época eran relativamente nuevos, no entró en mayor detalle con estos.
+
