@@ -1,4 +1,4 @@
-# Lectura 5-1: “Combining Predictions for Accurate RecommenderSystems”
+# Lectura 5-1: “Combining Predictions for Accurate Recommender Systems”
 
 En este artículo, se proporciona un análisis de diferentes métodos de combinación en el conjunto de datos de Netflix. Se discuten y prueban varios algoritmos prometedores para la combinación, que incluyen combinaciones de redes neuronales, árboles de decisión impulsados ​​por gradientes entre otros. En la Sección 2 los autores dan una descripción general de los algoritmos de filtrado colaborativo que se utilizarán como predictores base para los experimentos de combinación. La Sección 3 presenta los algoritmos utilizados para la combinación para finalizar mostrando los resultados obtenidos.
 
