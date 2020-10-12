@@ -1,0 +1,17 @@
+# Lectura 9-1: “Multi-Armed Recommender SystemBandit Ensembles”
+
+En el último tiempo, se han desarrollado enfoques sofisticados para optimizar automáticamente la configuración de los conjuntos para maximizar sus ganancias de rendimiento. Sin embargo, la mayor parte del trabajo en esta área se ha enfocado en escenarios simplificados donde los algoritmos se prueban y comparan en una sola ejecución no interactiva donde cada usuario recibe solo un conjunto de elementos recomendados, en el que se calcula una métrica de evaluación final y finaliza el experimento. En este artículo. se considera una perspectiva más realista, que va más allá de las recomendaciones de un solo paso, teniendo en cuenta la naturaleza cíclica de la tarea de recomendación, donde una gran parte de la entrada del sistema se recopila a partir de la reacción de los usuarios a las recomendaciones que ellos son entregados. Se explora la adaptación de un enfoque de "*multi-armed bandit*" para optimizar dinámicamente los conjuntos de sistemas de recomendación.
+
+Es interesante la aplicación de los conjuntos de *bandit* mencionada en el texto, habló de la prueba A / B , donde un método de bandidos decide automáticamente entre varios algoritmos en función de su desempeño anterior. Si un algoritmo de recomendación es claramente menos efectivo que los otros, el conjunto de bandidos reducirá progresivamente el tráfico que se le asigna. Esto es importante, ya que muestra que el sistema va "actuando" de acuerdo a la situación actual, y eso le da un mayor realismo, y claramente se puede obtener una mayor efectividad.
+
+El dataset utilizado para los experimentos me parece adecuado.
+
+Los experimentos se realizan con un tipo de parámetros, estos fueron tomados desde otro paper, esto no me parece adecuado, ya que se pudo haber intentado con otros valores, donde quizás se hubiese obtenido un rendimiento superior al obtenido (Se obtuvieron buenos resultados, pero quizás pudieron haber sido mejores).
+
+En cada época de la simulación, el sistema recomienda un solo elemento a cada usuario. Creo que se podría haber intentando que el sistema recomiendo más de un elemento a cada usuario, uno solo me parece insuficiente.
+
+Cada sistema de recomendación tiene sus propios conjuntos de formación, prueba y exclusión, ya que se construyen a partir de los comentarios de los usuarios para sus propias recomendaciones específicas. Esto me parece interesante, ya que en mi opinión le da una mayor modularidad al sistema completo.
+
+Un resultado interesante es que se puede ver que  en un comienzo, la popularidad es claramente dominante, pero a medida que la factorización de la matriz comienza a mejorar, los conjuntos bandit aumentan gradualmente la selección de la última. kNN, sin embargo, parece ser raramente seleccionado por los conjuntos aunque, como un recomendador iterativo independiente, es mejor que la factorización matricial, esto demuestra que los conjuntos de bandidos pueden lograr optimizaciones mejoradas no obvias, lo que es un gran resultado.
+
+Como conclusión el enfoque presentado en el paper presenta algunas ventajas tales como: No se ve afectado por el circuito de retroalimentación que se evidencia en las decisiones basadas en la evaluación fuera de línea con datos registrados. Otra ventaja importante de estos conjuntos, es su bajo costo computacional, ya que necesitan ejecutar solo un algoritmo de recomendación seleccionado, y no todos los demás. Esto puede significar un gran ahorro cuando el tamaño del conjunto es grande.
